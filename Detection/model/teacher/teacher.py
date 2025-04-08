@@ -3,6 +3,7 @@ from detectron2.modeling.proposal_generator import build_proposal_generator
 from detectron2.modeling.roi_heads import build_roi_heads
 from detectron2.checkpoint import DetectionCheckpointer
 
+
 from torch import nn
 
 class Teacher(nn.Module):
@@ -13,7 +14,8 @@ class Teacher(nn.Module):
         self.roi_heads = roi_heads
 
 def build_teacher(cfg):
-    teacher_cfg = cfg.TEACHER
+    teacher_cfg = cfg
+
     backbone = build_backbone(teacher_cfg)
     if not 'Retina' in teacher_cfg.MODEL.META_ARCHITECTURE:
         proposal_generator = build_proposal_generator(teacher_cfg, backbone.output_shape())

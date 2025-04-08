@@ -315,7 +315,7 @@ def add_teacher_cfg(cfg):
     cfg.TEACHER.MODEL.ROI_BOX_HEAD.CLS_AGNOSTIC_BBOX_REG = False
     # If true, RoI heads use bounding boxes predicted by the box head rather than proposal boxes.
     cfg.TEACHER.MODEL.ROI_BOX_HEAD.TRAIN_ON_PRED_BOXES = False
-    
+
     # ---------------------------------------------------------------------------- #
     # Cascaded Box Head
     # ---------------------------------------------------------------------------- #
